@@ -5,7 +5,7 @@ const MAX_SPEED = 200
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	var direction = get_movement_vector().normalized()
 	velocity = direction * MAX_SPEED
 	move_and_slide()
