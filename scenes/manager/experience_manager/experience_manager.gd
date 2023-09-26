@@ -1,6 +1,7 @@
 extends Node
 
 signal experience_updated(current_experience: float, target_experience: float)
+signal level_up
 
 const TARGET_EXP_GROWTH = 5
 
@@ -17,9 +18,8 @@ func increment_experience(number: float) -> void:
         current_level += 1
         target_exp += TARGET_EXP_GROWTH
         current_exp = 0
-        experience_updated.emit(current_exp, target_exp)
-    else:
-        experience_updated.emit(current_exp, target_exp)
+        level_up.emit()
+    experience_updated.emit(current_exp, target_exp)
     # print(current_exp)
 
 func on_exp_vial_collected(number: float) -> void:
