@@ -7,7 +7,7 @@ func _ready():
 
 func increment_experience(number: float) -> void:
     current_exp += number
-    print(current_exp)
+    # print(current_exp)
 
 func on_exp_vial_collected(number: float) -> void:
     increment_experience(number)
