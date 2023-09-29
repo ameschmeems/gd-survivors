@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://p3a622dwq8x6"]
+[gd_scene load_steps=2 format=3 uid="uid://p3a622dwq8x6"]
+
+[ext_resource type="Script" path="res://scenes/ui/victory_screen/victory_screen.gd" id="1_h3j8p"]
 
 [node name="VictoryScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_h3j8p")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -11,23 +15,37 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Yippee!!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "You won!"
 
-[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "Restart"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+text = "Quit"
