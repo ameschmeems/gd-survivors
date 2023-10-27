@@ -52,7 +52,7 @@ func on_health_changed() -> void:
 	update_health_display()
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, _current_upgrades: Dictionary):
-	if not ability_upgrade is Ability:
+	if not (ability_upgrade is Ability):
 		return
 	
 	var ability = ability_upgrade as Ability

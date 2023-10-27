@@ -7,5 +7,6 @@
 script = ExtResource("2_ggotm")
 ability_controller_scene = ExtResource("1_4uvh1")
 id = "axe"
+max_quantity = 1
 name = "Axe"
-description = "Launches a spinning axe every 2s"
+description = "Launches a spinning axe every 3.5s"
