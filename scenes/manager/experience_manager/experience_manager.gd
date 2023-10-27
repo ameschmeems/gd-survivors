@@ -20,7 +20,6 @@ func increment_experience(number: float) -> void:
 		current_exp = 0
 		level_up.emit(current_level)
 	experience_updated.emit(current_exp, target_exp)
-	# print(current_exp)
 
 func on_exp_vial_collected(number: float) -> void:
 	increment_experience(number)
