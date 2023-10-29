@@ -7,6 +7,7 @@ var additional_damage_percent = 1
 
 func _ready():
 	$Timer.timeout.connect(on_timer_timeout)
+	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 func on_timer_timeout():
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -24,4 +25,4 @@ func on_timer_timeout():
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
 	if upgrade.id == "axe_damage":
-		additional_damage_percent = 1 + (current_upgrades["axe_damage"]["quantity"])
+		additional_damage_percent = 1 + (current_upgrades["axe_damage"]["quantity"] * .1)

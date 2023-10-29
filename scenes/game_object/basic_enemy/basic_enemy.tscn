@@ -72,7 +72,7 @@ _data = {
 "walk": SubResource("Animation_0jvf1")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wh40v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idsvu"]
 resource_local_to_scene = true
 shader = ExtResource("6_w8yi5")
 shader_parameter/lerp_percent = 0.0
@@ -105,7 +105,7 @@ health_component = NodePath("../HealthComponent")
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("7_reot6")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_wh40v")
+hit_flash_material = SubResource("ShaderMaterial_idsvu")
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_hby6x")]
 health_component = NodePath("../HealthComponent")
