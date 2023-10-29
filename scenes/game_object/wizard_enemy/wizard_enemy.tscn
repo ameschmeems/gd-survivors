@@ -138,7 +138,7 @@ health_component = NodePath("../HealthComponent")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("2_cdpd7")]
 max_speed = 60
-acceleration = 20.0
+acceleration = 30.0
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("2_yjfit")]
 health_component = NodePath("../HealthComponent")
