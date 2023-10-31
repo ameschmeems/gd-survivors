@@ -11,6 +11,7 @@
 [node name="SoundButton" type="Button"]
 offset_right = 6.0
 offset_bottom = 6.0
+text = "Sound Button"
 script = ExtResource("1_cl8p4")
 
 [node name="RandomStreamPlayerComponent" parent="." instance=ExtResource("2_3flgl")]
