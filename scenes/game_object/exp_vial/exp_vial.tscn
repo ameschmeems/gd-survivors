@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbu3chvshvct8"]
+[gd_scene load_steps=5 format=3 uid="uid://dbu3chvshvct8"]
 
 [ext_resource type="Texture2D" uid="uid://bruclsxh168xr" path="res://scenes/game_object/exp_vial/exp_vial.png" id="1_5gxk3"]
 [ext_resource type="Script" path="res://scenes/game_object/exp_vial/exp_vial.gd" id="1_gc1uu"]
+[ext_resource type="PackedScene" uid="uid://hvofnuh66q4u" path="res://scenes/component/random_stream_player_2d_component/random_stream_player_2d_component.tscn" id="2_3bg3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u84uk"]
 radius = 16.0
 
 [node name="ExpVial" type="Node2D"]
 script = ExtResource("1_gc1uu")
+
+[node name="RandomStreamPlayer2DComponent" parent="." instance=ExtResource("2_3bg3q")]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

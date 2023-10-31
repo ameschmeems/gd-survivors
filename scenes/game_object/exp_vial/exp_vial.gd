@@ -35,3 +35,5 @@ func on_area_entered(_other_area: Area2D):
 		.set_delay(.45)
 	tween.chain()
 	tween.tween_callback(collect)
+
+	$RandomStreamPlayer2DComponent.play_random()

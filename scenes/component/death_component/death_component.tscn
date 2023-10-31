@@ -1,7 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://0fhseg1uhrp3"]
+[gd_scene load_steps=15 format=3 uid="uid://0fhseg1uhrp3"]
 
 [ext_resource type="Script" path="res://scenes/component/death_component/death_component.gd" id="1_8cq1c"]
 [ext_resource type="Texture2D" uid="uid://l23oeq2xe6b2" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_p0w6n"]
+[ext_resource type="PackedScene" uid="uid://hvofnuh66q4u" path="res://scenes/component/random_stream_player_2d_component/random_stream_player_2d_component.tscn" id="3_77ufj"]
+[ext_resource type="AudioStream" uid="uid://c4lffcmxfi8qq" path="res://assets/audio/footstep_carpet_000.ogg" id="4_dj7a4"]
+[ext_resource type="AudioStream" uid="uid://cjftqiaept6ah" path="res://assets/audio/footstep_carpet_001.ogg" id="5_w2t6e"]
+[ext_resource type="AudioStream" uid="uid://c0p1j2ieqa5wx" path="res://assets/audio/footstep_carpet_002.ogg" id="6_cmkki"]
+[ext_resource type="AudioStream" uid="uid://ga0meu2g2t70" path="res://assets/audio/footstep_carpet_003.ogg" id="7_prbbs"]
+[ext_resource type="AudioStream" uid="uid://bb4e8andk10yc" path="res://assets/audio/footstep_carpet_004.ogg" id="8_tenyk"]
+
+[sub_resource type="Animation" id="Animation_u5eul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_o80bw"]
 resource_name = "default"
@@ -30,21 +51,6 @@ tracks/1/keys = {
 "args": [],
 "method": &"queue_free"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_u5eul"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xp6ek"]
@@ -91,3 +97,7 @@ lifetime = 0.5
 one_shot = true
 fixed_fps = 0
 interpolate = false
+
+[node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("3_77ufj")]
+max_distance = 300.0
+streams = Array[AudioStream]([ExtResource("4_dj7a4"), ExtResource("5_w2t6e"), ExtResource("6_cmkki"), ExtResource("7_prbbs"), ExtResource("8_tenyk")])

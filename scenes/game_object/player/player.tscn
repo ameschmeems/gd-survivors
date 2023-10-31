@@ -1,10 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgkr0fqq2llha"]
+[gd_scene load_steps=18 format=3 uid="uid://dgkr0fqq2llha"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_4ixwn"]
 [ext_resource type="PackedScene" uid="uid://c4oc1w7o1f5mh" path="res://scenes/component/velocity_component/velocity_component.tscn" id="2_c7wab"]
 [ext_resource type="PackedScene" uid="uid://t0s7y8dqn5sk" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_s4d3q"]
 [ext_resource type="PackedScene" uid="uid://dnivte5nthkr2" path="res://scenes/component/health_component/health_component.tscn" id="2_tvspt"]
 [ext_resource type="Texture2D" uid="uid://bq82ed6ouq18b" path="res://scenes/game_object/player/player.png" id="3_16y42"]
+[ext_resource type="PackedScene" uid="uid://hvofnuh66q4u" path="res://scenes/component/random_stream_player_2d_component/random_stream_player_2d_component.tscn" id="5_vjugu"]
+[ext_resource type="AudioStream" uid="uid://cwcfwku3ggtl" path="res://assets/audio/impactMining_000.ogg" id="6_juncx"]
+[ext_resource type="AudioStream" uid="uid://dldlcvrpfbo1a" path="res://assets/audio/impactMining_001.ogg" id="7_o40ef"]
+[ext_resource type="AudioStream" uid="uid://dktmkegkr1xe3" path="res://assets/audio/impactMining_002.ogg" id="8_a8c24"]
+[ext_resource type="AudioStream" uid="uid://bmkffyb7yvd4l" path="res://assets/audio/impactMining_003.ogg" id="9_qx2ck"]
+[ext_resource type="AudioStream" uid="uid://qky4d70lnrth" path="res://assets/audio/impactMining_004.ogg" id="10_px0wq"]
 
 [sub_resource type="Animation" id="Animation_u8dlg"]
 length = 0.001
@@ -120,6 +126,9 @@ acceleration = 25.0
 [node name="Abilities" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_s4d3q")]
+
+[node name="HitRandomStreamPlayer" parent="." instance=ExtResource("5_vjugu")]
+streams = Array[AudioStream]([ExtResource("6_juncx"), ExtResource("7_o40ef"), ExtResource("8_a8c24"), ExtResource("9_qx2ck"), ExtResource("10_px0wq")])
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5
