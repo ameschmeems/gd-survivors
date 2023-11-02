@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fvuwv8v2ijgu"]
+[gd_scene load_steps=5 format=3 uid="uid://fvuwv8v2ijgu"]
 
 [ext_resource type="TileSet" uid="uid://brstvi7oemj7" path="res://resources/tileset.tres" id="1_uaa7j"]
 [ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_y4hay"]
+[ext_resource type="PackedScene" uid="uid://d3boml8fygsbt" path="res://scenes/ui/vignette/vignette.tscn" id="2_8na2r"]
 [ext_resource type="PackedScene" uid="uid://ckbus8npmai31" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_vdc3a"]
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -38,6 +39,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"BlueOutlineLabel"
 theme_override_font_sizes/font_size = 32
 text = "GD Survivors"
 
@@ -56,3 +58,6 @@ text = "Options"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="Vignette" parent="." instance=ExtResource("2_8na2r")]
+layer = 2
