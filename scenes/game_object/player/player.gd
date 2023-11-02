@@ -21,7 +21,7 @@ func _ready():
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	update_health_display()
 
-func _process(delta):
+func _process(_delta):
 	var direction = get_movement_vector().normalized()
 	velocity_component.accelerate_in_direction(direction)
 	velocity_component.move(self)
