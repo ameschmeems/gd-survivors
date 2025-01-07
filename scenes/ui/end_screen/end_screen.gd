@@ -16,7 +16,7 @@ func _ready():
 
 func set_defeat() -> void:
 	%TitleLabel.text = "Defeat"
-	%DescriptionLabel.text = "You lost! womp womp"
+	%DescriptionLabel.text = "You lost!"
 	play_jingle(true)
 
 func play_jingle(defeat: bool = false):

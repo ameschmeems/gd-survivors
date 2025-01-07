@@ -95,10 +95,10 @@ collision_mask = 9
 script = ExtResource("1_oblx7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "walk"
 libraries = {
 "": SubResource("AnimationLibrary_ta6bl")
 }
+autoplay = "walk"
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_ol85u")]
 
@@ -118,7 +118,6 @@ health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
 
 [node name="HitRandomAudioPlayerComponent" parent="." instance=ExtResource("11_3srsj")]
-max_distance = 300.0
 streams = Array[AudioStream]([ExtResource("10_ej7vg"), ExtResource("12_y3d1g"), ExtResource("13_2xsyo"), ExtResource("14_ej6ym"), ExtResource("15_gysxf")])
 
 [node name="Visuals" type="Node2D" parent="."]
